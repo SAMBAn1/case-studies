@@ -111,6 +111,16 @@ h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em;}
 }
 
 /* demo */
+.open-app-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  margin-top:24px;padding:12px 22px;border-radius:999px;
+  background:linear-gradient(90deg,var(--amber),var(--teal));
+  color:#0a0a0f;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:0.95rem;
+  text-decoration:none;transition:transform .2s, box-shadow .2s;
+}
+.open-app-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,166,35,0.25);}
+.open-app-btn span{font-size:1.1rem;}
+
 .app-frame{
   margin-top:48px;border-radius:12px;overflow:hidden;
   border:1px solid var(--border);background:#000;

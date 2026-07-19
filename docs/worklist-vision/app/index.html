@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Worklist OS — Full Demo</title>
+<meta name="description" content="A full, live-data rebuild of the hybrid collections worklist — real Supabase backend, real filtering, real Why panel.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <header class="topbar">
+    <div class="topbar-left">
+      <a href="../" class="brand">← Worklist OS</a>
+      <span class="live-dot" id="live-indicator">connecting…</span>
+    </div>
+    <nav class="toplevel-nav">
+      <button class="toplevel-tab active" data-view="worklist">My Worklist</button>
+      <button class="toplevel-tab" data-view="model">Operating Model</button>
+    </nav>
+    <button id="fullscreen-btn" class="fs-btn" title="Toggle fullscreen">⛶ Fullscreen</button>
+  </header>
+
+  <main id="view-worklist" class="view">
+    <div class="wl-topbar">
+      <div class="wl-tabs">
+        <button class="wl-tab active" data-tab="focus">Today's Focus <span class="wl-count" id="count-focus">–</span></button>
+        <button class="wl-tab" data-tab="backlog">Eligible Backlog <span class="wl-count" id="count-backlog">–</span></button>
+      </div>
+      <label class="wl-sim">
+        <input type="checkbox" id="wl-sim-toggle">
+        <span class="wl-sim-track"><span class="wl-sim-thumb"></span></span>
+        Simulate config change
+      </label>
+    </div>
+
+    <div class="wl-controls">
+      <input id="wl-search" class="wl-search" type="text" placeholder="Search customer or ID…">
+      <select id="wl-group-filter" class="wl-select">
+        <option value="">All groups</option>
+      </select>
+      <select id="wl-band-filter" class="wl-select">
+        <option value="">All bands</option>
+        <option>Critical</option><option>High</option><option>Medium</option><option>Low</option>
+      </select>
+      <label class="wl-check"><input type="checkbox" id="wl-cooldown-filter"> Suppressed only</label>
+      <label class="wl-check"><input type="checkbox" id="wl-shared-filter"> Shared pool only</label>
+    </div>
+
+    <div class="wl-table">
+      <div class="wl-row wl-row-head">
+        <span>Customer</span><span>Group</span><span>Collector</span><span>Past Due</span><span>Band</span><span>Primary Action</span><span></span>
+      </div>
+      <div id="wl-rows"></div>
+      <div id="wl-empty" class="wl-empty" hidden>No customers match these filters.</div>
+    </div>
+  </main>
+
+  <main id="view-model" class="view" hidden>
+    <div class="model-grid">
+      <section class="model-card">
+        <p class="model-kicker">PILLAR 1 · PRIORITIZATION</p>
+        <h3>"Who should matter more?"</h3>
+        <p>Data-driven scoring per customer group. Default ranking mode is <b>Group-Level Rank</b> — sorted by ascending in-group rank, then by past-due amount as a tie-breaker.</p>
+        <p class="model-note">Advanced option: Priority Band + Group Rank, for when groups use different scoring models and raw scores aren't comparable.</p>
+      </section>
+      <section class="model-card">
+        <p class="model-kicker">PILLAR 2 · ALLOCATION</p>
+        <h3>"Who owns this customer?"</h3>
+        <p>Fixed assignment rules by default (region, customer class, company code). Unmatched customers fall back to Shared Pool rather than a forced, arbitrary owner.</p>
+        <p class="model-note">Bandwidth shapes Today's Focus fill — it never silently reassigns ownership.</p>
+      </section>
+      <section class="model-card">
+        <p class="model-kicker">PILLAR 3 · ACTION</p>
+        <h3>"What should be done?"</h3>
+        <p>Action Sequence Mode default: <b>Highest Eligible Action Wins</b> — the strongest matching action shows, even if earlier ones weren't completed.</p>
+        <p class="model-note">Enterprise SOP-heavy customers can opt into Sequential Completion Required instead.</p>
+      </section>
+      <section class="model-card">
+        <p class="model-kicker">PILLAR 4 · WORKLIST</p>
+        <h3>"What shows up today, and why?"</h3>
+        <p>Today's Focus runs <b>Full Portfolio with Focus Target</b> — the whole eligible, assigned portfolio stays visible, with the top portion flagged as focus.</p>
+        <p class="model-note">Cooldown suppresses without hiding: suppressed customers stay visible and filterable in Eligible Backlog.</p>
+      </section>
+    </div>
+    <p class="model-footer">This configuration view is read-only in the demo — in the real product, every value here is admin-editable with simulation before activation.</p>
+  </main>
+</div>
+
+<div id="wl-why" class="wl-why">
+  <div class="wl-why-head">
+    <span>Why this row</span>
+    <button id="wl-why-close">✕</button>
+  </div>
+  <div id="wl-why-body" class="wl-why-body"></div>
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
