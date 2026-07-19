@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4.7 to 5.3 GHz, Zero AVX Offset — Sambit</title>
+<meta name="description" content="An overclocking experimentation log: pushing an Intel Core i9-9900K from 4.7GHz to a stable 5.3GHz with zero AVX offset, on a 360mm AIO cooler.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav class="nav">
+  <a href="https://www.sambitxsamba.com" class="nav-back">← sambitxsamba.com</a>
+  <div class="nav-links">
+    <a href="#hero">Intro</a>
+    <a href="#hypothesis">Hypothesis</a>
+    <a href="#avx">AVX Offset</a>
+    <a href="#method">Method</a>
+    <a href="#result">Result</a>
+  </div>
+  <span class="nav-tag">CASE STUDY 04</span>
+</nav>
+
+<header class="hero" id="hero">
+  <p class="eyebrow">EXPERIMENTATION LOG</p>
+  <h1>4.7 GHz stock.<br>5.3 GHz achieved.<br><span class="grad">Zero AVX offset.</span></h1>
+  <p class="hero-sub">
+    Overclocking isn't just cranking a slider. It's a hypothesis, a rig, hours of stress testing,
+    and a result you can defend. Here's the log from pushing an Intel Core i9-9900K further than
+    its stock profile without giving up stability under full AVX load.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-val">4.7→5.3</span><span class="stat-label">GHz all-core</span></div>
+    <div class="stat"><span class="stat-val">0</span><span class="stat-label">AVX offset</span></div>
+    <div class="stat"><span class="stat-val">360mm</span><span class="stat-label">AIO cooling only</span></div>
+    <div class="stat"><span class="stat-val">8/16</span><span class="stat-label">cores / threads</span></div>
+  </div>
+  <div class="scroll-cue">scroll<span>↓</span></div>
+</header>
+
+<figure class="cpu-shot">
+  <img src="img/cpu-hero.webp" alt="Intel Core i9-9900K seated in its LGA1151 socket" loading="lazy">
+  <figcaption>The subject: an Intel Core i9-9900K, 8 cores / 16 threads, stock boost 4.7GHz.</figcaption>
+</figure>
+
+<section class="section hypothesis" id="hypothesis">
+  <div class="section-head">
+    <div class="section-head-left">
+      <p class="kicker">THE HYPOTHESIS</p>
+      <h2>Push the chip past stock — without an AVX safety net.</h2>
+    </div>
+    <p class="lede">
+      Not every processor is fit for an aggressive overclock, and not every overclock that boots is
+      actually stable. The real test is whether it survives the worst-case workload, not the easy one.
+    </p>
+  </div>
+  <p class="hypothesis-text">
+    The goal: push the base boost clock of an Intel i9-9900K from 4.7GHz to 5.3GHz — with an
+    unprecedented 0 AVX Offset, on a modest 360mm AIO cooler rather than exotic cooling. Getting
+    there meant extensive research into how the chip behaves under everything from single-core to
+    full multi-core AVX loads, before ever touching a voltage setting.
+  </p>
+</section>
+
+<section class="section avx" id="avx">
+  <div class="section-head">
+    <div class="section-head-left">
+      <p class="kicker">WHY AVX OFFSET IS THE HARD MODE</p>
+      <h2>Most "5GHz overclocks" quietly cheat under load.</h2>
+    </div>
+    <p class="lede">
+      This is the part most overclocking claims gloss over — and the part that makes a 0 AVX
+      offset result worth taking seriously.
+    </p>
+  </div>
+  <div class="avx-grid">
+    <div class="avx-card">
+      <p class="avx-label">WHAT AVX IS</p>
+      <p>Advanced Vector Extensions — instructions that accelerate heavy floating-point work like media transcoding, scientific computing, and synthetic stress tests such as Prime95.</p>
+    </div>
+    <div class="avx-card">
+      <p class="avx-label">WHY IT BREAKS OVERCLOCKS</p>
+      <p>AVX instructions draw significantly more power and generate more heat than ordinary workloads — enough that a clock speed rock-solid in games can crash outright the moment AVX code runs.</p>
+    </div>
+    <div class="avx-card">
+      <p class="avx-label">THE "OFFSET" WORKAROUND</p>
+      <p>Intel's AVX Offset setting lets the core ratio drop automatically when AVX is detected — e.g. 50x normally, dropping to 48x under AVX. It's a legitimate tool. It's also how most high-clock overclocks stay stable.</p>
+    </div>
+    <div class="avx-card highlight">
+      <p class="avx-label">WHY ZERO OFFSET IS THE HARDER CLAIM</p>
+      <p>An offset of 0 means no safety net — the chip holds 5.3GHz under literally any workload, including the heaviest AVX torture tests. That's a materially stronger result than a "gaming overclock" that only looks stable because AVX never got in the way.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section method" id="method">
+  <div class="section-head">
+    <div class="section-head-left">
+      <p class="kicker">THE METHOD</p>
+      <h2>Incremental, tested, repeated — not a lucky BIOS save.</h2>
+    </div>
+    <p class="lede">
+      A successful overclock is less "try a number" and more a loop, run over days until the
+      result holds under the worst case, not just the first boot.
+    </p>
+  </div>
+  <div class="log">
+    <div class="log-entry">
+      <span class="log-n">01</span>
+      <div>
+        <h4>Baseline load testing</h4>
+        <p>Characterized how the 9900K behaved from light single-core loads up to full 8-core / 16-thread loads before touching a single setting — establishing what "normal" looked like first.</p>
+      </div>
+    </div>
+    <div class="log-entry">
+      <span class="log-n">02</span>
+      <div>
+        <h4>Voltage, set conservatively</h4>
+        <p>Set a higher core voltage in the motherboard BIOS — comfortably under Intel's specified safe ceiling — before ever raising the clock multiplier.</p>
+      </div>
+    </div>
+    <div class="log-entry">
+      <span class="log-n">03</span>
+      <div>
+        <h4>Step the clock, then stress it</h4>
+        <p>Raised the multiplier in small increments. After each step, stress-tested with Prime95 — a billion complex instructions deep, including full AVX — to catch instability immediately rather than days later.</p>
+      </div>
+    </div>
+    <div class="log-entry">
+      <span class="log-n">04</span>
+      <div>
+        <h4>Repeat until it breaks — then back off one step</h4>
+        <p>Multiple attempts, spread across days, converging on the highest clock that survived sustained Prime95 AVX punishment without a voltage bump the 360mm AIO couldn't keep cool.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section result" id="result">
+  <div class="section-head">
+    <div class="section-head-left">
+      <p class="kicker">THE RESULT</p>
+      <h2>5.3GHz. Zero offset. Stable under Prime95.</h2>
+    </div>
+    <p class="lede">
+      After multiple attempts and days of testing: a stable 5.3GHz all-core overclock, with 0 AVX
+      Offset, cooled entirely by a 360mm AIO.
+    </p>
+  </div>
+  <div class="result-table">
+    <div class="result-row"><span>Stock boost clock</span><span>4.7 GHz</span></div>
+    <div class="result-row"><span>Achieved overclock</span><span class="win">5.3 GHz</span></div>
+    <div class="result-row"><span>AVX offset</span><span class="win">0 (no offset)</span></div>
+    <div class="result-row"><span>Cooling</span><span>360mm AIO</span></div>
+    <div class="result-row"><span>Stress test</span><span>Prime95, full AVX, multi-hour</span></div>
+    <div class="result-row"><span>Cores / threads</span><span>8 / 16</span></div>
+  </div>
+  <p class="context-note">
+    For context: 5GHz+ all-core overclocks on the 9900K are well documented across the enthusiast
+    community, but usually rely on an AVX offset of -1 or -2 to stay stable, larger custom loops,
+    or accept higher voltages than this configuration used. A genuine 0-offset result at this
+    clock, on AIO cooling alone, is the less common outcome — and the reason this is worth logging
+    rather than just screenshotting a BIOS save.
+  </p>
+</section>
+
+<footer class="footer">
+  <p>An experimentation log. Part of a running series of product &amp; project case studies.</p>
+  <a href="https://www.sambitxsamba.com" class="footer-link">← Back to sambitxsamba.com</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
