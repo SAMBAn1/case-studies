@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Worklist Operating Model — Sambit</title>
+<meta name="description" content="Two collections worklists, two different failures — and a hybrid operating model that keeps the control of one and the intelligence of the other. With a working demo.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav class="nav">
+  <a href="https://www.sambitxsamba.com" class="nav-back">← sambitxsamba.com</a>
+  <span class="nav-tag">CASE STUDY 02</span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow">PRODUCT VISION &amp; WORKING DEMO</p>
+  <h1>Two worklists.<br>Two different failures.<br><span class="grad">One hybrid model.</span></h1>
+  <p class="hero-sub">
+    A rule-based worklist and a data-driven worklist solved different halves of the same problem —
+    and each broke the half the other one fixed. Here's the operating model that keeps both.
+  </p>
+  <div class="scroll-cue">scroll<span>↓</span></div>
+</header>
+
+<section class="section problem">
+  <p class="kicker">THE PROBLEM</p>
+  <h2>Control and intelligence keep getting shipped as opposites.</h2>
+  <p class="lede">
+    This isn't a versioning issue. It's a structural tradeoff neither model resolves on its own —
+    and collections teams end up choosing which failure they'd rather live with.
+  </p>
+
+  <div class="compare">
+    <div class="compare-card rule">
+      <p class="compare-label">RULE-BASED MODEL</p>
+      <p class="compare-sub">Granular control, expensive to run</p>
+      <ul class="good">
+        <li>Segment → strategy → rule mapping that mirrors real SOPs</li>
+        <li>Named, predictable assignment</li>
+        <li>Specific, auditable actions</li>
+      </ul>
+      <ul class="bad">
+        <li>Rules proliferate until nobody can maintain the strategy tree</li>
+        <li>Every change is a consulting engagement</li>
+        <li>Prioritization quality is weak — rules don't rank, they just fire</li>
+      </ul>
+    </div>
+    <div class="compare-vs">VS</div>
+    <div class="compare-card data">
+      <p class="compare-label">DATA-DRIVEN MODEL</p>
+      <p class="compare-sub">Smart scoring, opaque and rigid</p>
+      <ul class="good">
+        <li>Normalized, data-driven scoring out of the box</li>
+        <li>Correspondence cleanly decoupled from the worklist</li>
+        <li>Fast initial setup, no strategy tree to design</li>
+      </ul>
+      <ul class="bad">
+        <li>Black-box prioritization — nobody can explain a rank</li>
+        <li>Actions are generic: "Call" is not an instruction</li>
+        <li>Dynamic assignment breaks ownership continuity</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section vision">
+  <p class="kicker">THE VISION</p>
+  <h2>Four questions. Four pillars. Independently answered, never entangled.</h2>
+  <p class="lede">
+    The fix isn't picking a side. It's refusing to let one mechanism decide priority, ownership,
+    action, and visibility all at once — the exact entanglement that made both models fragile.
+  </p>
+
+  <div class="pillars">
+    <div class="pillar" data-n="01">
+      <p class="pillar-q">"Who should matter more?"</p>
+      <h3>Prioritization</h3>
+      <p>Data-driven scoring, group-level ranking, and priority bands — with every score fully explainable, never a black box.</p>
+    </div>
+    <div class="pillar" data-n="02">
+      <p class="pillar-q">"Who owns this customer?"</p>
+      <h3>Allocation</h3>
+      <p>Fixed rules, uniform distribution, or shared pool — ownership stays stable. Bandwidth shapes focus, never silently reassigns.</p>
+    </div>
+    <div class="pillar" data-n="03">
+      <p class="pillar-q">"What should be done?"</p>
+      <h3>Action</h3>
+      <p>Specific business instructions, not generic labels — with sequencing, expiry, and completion criteria a collector can trust.</p>
+    </div>
+    <div class="pillar" data-n="04">
+      <p class="pillar-q">"What shows up today, and why?"</p>
+      <h3>Worklist</h3>
+      <p>Today's Focus and Eligible Backlog, with eligibility, cooldown, and every inclusion or suppression fully explained.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section demo">
+  <p class="kicker">SEE IT WORKING</p>
+  <h2>This isn't a mock. It's running.</h2>
+  <p class="lede">
+    A live rebuild of the collector experience described in the operating model — Today's Focus,
+    Eligible Backlog, priority bands, and a "Why" panel for every row. Click a customer. Flip
+    simulation on.
+  </p>
+
+  <div class="app-frame">
+    <div class="shot-chrome"><span></span><span></span><span></span><span class="shot-url">worklist.internal/my-worklist</span></div>
+
+    <div id="worklist-app" class="wl-app">
+      <div class="wl-topbar">
+        <div class="wl-tabs">
+          <button class="wl-tab active" data-tab="focus">Today's Focus <span class="wl-count">24</span></button>
+          <button class="wl-tab" data-tab="backlog">Eligible Backlog <span class="wl-count">143</span></button>
+        </div>
+        <label class="wl-sim">
+          <input type="checkbox" id="wl-sim-toggle">
+          <span class="wl-sim-track"><span class="wl-sim-thumb"></span></span>
+          Simulate config change
+        </label>
+      </div>
+
+      <div class="wl-filters">
+        <span class="wl-filter">Priority Band</span>
+        <span class="wl-filter">Suppressed <b>18</b></span>
+        <span class="wl-filter">Shared Pool <b>42</b></span>
+      </div>
+
+      <div class="wl-table">
+        <div class="wl-row wl-row-head">
+          <span>Customer</span><span>Collector</span><span>Past Due</span><span>Band</span><span>Primary Action</span><span></span>
+        </div>
+        <div id="wl-rows"></div>
+      </div>
+    </div>
+
+    <div id="wl-why" class="wl-why">
+      <div class="wl-why-head">
+        <span>Why this row</span>
+        <button id="wl-why-close">✕</button>
+      </div>
+      <div id="wl-why-body" class="wl-why-body"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section migration">
+  <p class="kicker">THE ADOPTION UNLOCK</p>
+  <h2>Nobody rebuilds their operating logic from a blank canvas.</h2>
+  <p class="lede centered">
+    Every customer running either legacy model gets the same low-risk path in: import what
+    already exists, simulate the new output, review the differences, and activate only once
+    it's trusted.
+  </p>
+  <div class="steps">
+    <div class="step"><span class="step-n">1</span><h4>Import</h4><p>Groups, rules, and assignment logic — mapped in, not rebuilt.</p></div>
+    <div class="step-arrow">→</div>
+    <div class="step"><span class="step-n">2</span><h4>Map</h4><p>Legacy concepts translated into the four-pillar model.</p></div>
+    <div class="step-arrow">→</div>
+    <div class="step"><span class="step-n">3</span><h4>Simulate</h4><p>Preview prioritization, action, and worklist outcomes.</p></div>
+    <div class="step-arrow">→</div>
+    <div class="step"><span class="step-n">4</span><h4>Review</h4><p>Compare score, owner, and worklist differences before anyone commits.</p></div>
+    <div class="step-arrow">→</div>
+    <div class="step"><span class="step-n">5</span><h4>Activate</h4><p>Promote only after confidence is built. Rollback stays available.</p></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>A vision, made tangible. Part of a running series of product case studies.</p>
+  <a href="https://www.sambitxsamba.com" class="footer-link">← Back to sambitxsamba.com</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
