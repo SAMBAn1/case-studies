@@ -69,33 +69,52 @@
       <path d="M50,0 L50,900" />
     </svg>
 
-    <div class="node" data-n="01">
-      <div class="node-head"><span class="node-tool">Lovable</span><span class="node-role">Visual ideation</span></div>
-      <p>Rapidly sketch and pressure-test UI concepts — the worklist, the grid, the detail views — before a single line of production code exists.</p>
+    <div class="node has-img" data-n="01">
+      <div class="node-text">
+        <div class="node-head"><span class="node-tool">Lovable</span><span class="node-role">Visual ideation</span></div>
+        <p>Rapidly sketch and pressure-test UI concepts — the worklist, the grid, the detail views — before a single line of production code exists.</p>
+      </div>
+      <div class="node-shot"><div class="shot-chrome"><span></span><span></span><span></span></div><img src="img/lovable.webp" alt="Worklist UI mockup being pressure-tested inside Lovable" loading="lazy"></div>
     </div>
-    <div class="node" data-n="02">
-      <div class="node-head"><span class="node-tool">ChatGPT</span><span class="node-role">Product reasoning</span></div>
-      <p>Turns raw ideas into structured PRDs, feature docs, and timestamped implementation instructions an agent can execute against.</p>
+    <div class="node has-img" data-n="02">
+      <div class="node-text">
+        <div class="node-head"><span class="node-tool">ChatGPT</span><span class="node-role">Product reasoning</span></div>
+        <p>Turns raw ideas into structured PRDs, feature docs, and timestamped implementation instructions an agent can execute against.</p>
+      </div>
+      <div class="node-shot"><div class="shot-chrome"><span></span><span></span><span></span></div><img src="img/chatgpt.webp" alt="ChatGPT reviewing the repo and sequencing the next feature" loading="lazy"></div>
     </div>
-    <div class="node" data-n="03">
-      <div class="node-head"><span class="node-tool">Codex</span><span class="node-role">Build execution</span></div>
-      <p>Implements scoped slices against the real codebase — GitHub-connected, plan/execute, incremental. The main coding engine.</p>
+    <div class="node has-img" data-n="03">
+      <div class="node-text">
+        <div class="node-head"><span class="node-tool">Codex</span><span class="node-role">Build execution</span></div>
+        <p>Implements scoped slices against the real codebase — GitHub-connected, plan/execute, incremental. The main coding engine.</p>
+      </div>
+      <div class="node-shot"><div class="shot-chrome"><span></span><span></span><span></span></div><img src="img/codex.webp" alt="Codex implementing a feature slice inside the IDE" loading="lazy"></div>
     </div>
-    <div class="node" data-n="04">
-      <div class="node-head"><span class="node-tool">GitHub</span><span class="node-role">Source of truth</span></div>
-      <p>Two repos, cleanly separated: the app codebase and the guidance/docs layer. Every instruction and every diff, versioned and auditable.</p>
+    <div class="node has-img" data-n="04">
+      <div class="node-text">
+        <div class="node-head"><span class="node-tool">GitHub</span><span class="node-role">Source of truth</span></div>
+        <p>Two repos, cleanly separated: the app codebase and the guidance/docs layer. Every instruction and every diff, versioned and auditable.</p>
+      </div>
+      <div class="node-shot"><div class="shot-chrome"><span></span><span></span><span></span></div><img src="img/github.webp" alt="The application code repository, separate from the guidance docs" loading="lazy"></div>
     </div>
-    <div class="node" data-n="05">
-      <div class="node-head"><span class="node-tool">Supabase</span><span class="node-role">Real backend</span></div>
-      <p>Structured entities and schema instead of mock JSON — because grouping, tags, Promise-to-Pay, and disputes only get validated against real data.</p>
+    <div class="node has-img" data-n="05">
+      <div class="node-text">
+        <div class="node-head"><span class="node-tool">Supabase</span><span class="node-role">Real backend</span></div>
+        <p>Structured entities and schema instead of mock JSON — because grouping, tags, Promise-to-Pay, and disputes only get validated against real data.</p>
+      </div>
+      <div class="node-shot"><div class="shot-chrome"><span></span><span></span><span></span></div><img src="img/supabase.webp" alt="Live Supabase tables backing the prototype" loading="lazy"></div>
     </div>
     <div class="node" data-n="06">
-      <div class="node-head"><span class="node-tool">Vercel</span><span class="node-role">Live deployment</span></div>
-      <p>Every increment ships to a reviewable URL. The distance between "I have an idea" and "here, look at it" collapses to hours.</p>
+      <div class="node-text">
+        <div class="node-head"><span class="node-tool">Vercel</span><span class="node-role">Live deployment</span></div>
+        <p>Every increment ships to a reviewable URL. The distance between "I have an idea" and "here, look at it" collapses to hours.</p>
+      </div>
     </div>
     <div class="node" data-n="07">
-      <div class="node-head"><span class="node-tool">Claude</span><span class="node-role">Second opinion</span></div>
-      <p>A challenger agent for when a parallel solution, an alternate framing, or an unblock is worth more than a single point of view.</p>
+      <div class="node-text">
+        <div class="node-head"><span class="node-tool">Claude</span><span class="node-role">Second opinion</span></div>
+        <p>A challenger agent for when a parallel solution, an alternate framing, or an unblock is worth more than a single point of view.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -132,6 +151,19 @@
     canvas to a working shell with dashboard and grid views, customer and invoice detail
     surfaces, a live schema, and a live deploy — reviewable end to end, not staged for a demo.
   </p>
+
+  <div class="tour">
+    <figure class="tour-shot">
+      <div class="shot-chrome"><span></span><span></span><span></span><span class="shot-url">codex-repo-gules.vercel.app/customers/CUST0003</span></div>
+      <img src="img/customer-detail.webp" alt="Live Customer Detail view: account command center with invoice exposure" loading="lazy">
+      <figcaption>Customer detail — a full account command center, not a grid drawer.</figcaption>
+    </figure>
+    <figure class="tour-shot">
+      <div class="shot-chrome"><span></span><span></span><span></span><span class="shot-url">codex-repo-gules.vercel.app/invoices/INV-2026-0000001</span></div>
+      <img src="img/invoice-detail.webp" alt="Live Invoice Detail view: invoice-level collections posture" loading="lazy">
+      <figcaption>Invoice detail — collections posture at the document level, live.</figcaption>
+    </figure>
+  </div>
 </section>
 
 <footer class="footer">
