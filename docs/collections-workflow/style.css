@@ -191,6 +191,38 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em;}
   .node.has-img{gap:20px;}
 }
 
+.mock{padding:20px;min-height:140px;display:flex;flex-direction:column;justify-content:center;gap:8px;}
+
+.mock-terminal{
+  font-family:'JetBrains Mono',monospace;font-size:0.82rem;
+  background:#0b0b12;
+}
+.mock-terminal p{margin:0;color:var(--ink);}
+.mock-prompt{color:var(--cyan);margin-right:6px;}
+.mock-dim{color:var(--ink-dim);}
+.mock-ok{color:#4ade80;}
+.mock-ok .mock-dim{color:#4ade8090;}
+
+.mock-chat{background:#0b0b12;gap:12px;}
+.bubble{
+  font-size:0.85rem;line-height:1.5;
+  padding:10px 14px;border-radius:12px;max-width:88%;
+}
+.bubble code{
+  font-family:'JetBrains Mono',monospace;font-size:0.8em;
+  background:rgba(255,255,255,0.08);padding:1px 5px;border-radius:4px;
+}
+.bubble-user{
+  align-self:flex-end;
+  background:rgba(139,92,246,0.18);color:var(--ink);
+  border-bottom-right-radius:3px;
+}
+.bubble-claude{
+  align-self:flex-start;
+  background:rgba(34,211,238,0.1);color:var(--ink);
+  border-bottom-left-radius:3px;
+}
+
 .why-cards{
   display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px;
 }

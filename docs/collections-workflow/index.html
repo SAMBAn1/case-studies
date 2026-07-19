@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The PM-as-Builder Stack — Sambit</title>
 <meta name="description" content="A seven-tool AI-native workflow that lets one PM design, build, deploy, and validate real working product — not mockups.">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -104,16 +105,32 @@
       </div>
       <div class="node-shot"><div class="shot-chrome"><span></span><span></span><span></span></div><img src="img/supabase.webp" alt="Live Supabase tables backing the prototype" loading="lazy"></div>
     </div>
-    <div class="node" data-n="06">
+    <div class="node has-img" data-n="06">
       <div class="node-text">
         <div class="node-head"><span class="node-tool">Vercel</span><span class="node-role">Live deployment</span></div>
         <p>Every increment ships to a reviewable URL. The distance between "I have an idea" and "here, look at it" collapses to hours.</p>
       </div>
+      <div class="node-shot">
+        <div class="shot-chrome"><span></span><span></span><span></span><span class="shot-url">vercel.com/samban1/codex-repo-gules</span></div>
+        <div class="mock mock-terminal">
+          <p><span class="mock-prompt">$</span> vercel --prod</p>
+          <p class="mock-dim">Inspecting build environment…</p>
+          <p class="mock-dim">Queued → Building → Completed</p>
+          <p class="mock-ok">✓ Production: codex-repo-gules.vercel.app <span class="mock-dim">(41s)</span></p>
+        </div>
+      </div>
     </div>
-    <div class="node" data-n="07">
+    <div class="node has-img" data-n="07">
       <div class="node-text">
         <div class="node-head"><span class="node-tool">Claude</span><span class="node-role">Second opinion</span></div>
         <p>A challenger agent for when a parallel solution, an alternate framing, or an unblock is worth more than a single point of view.</p>
+      </div>
+      <div class="node-shot">
+        <div class="shot-chrome"><span></span><span></span><span></span><span class="shot-url">claude.ai</span></div>
+        <div class="mock mock-chat">
+          <div class="bubble bubble-user">Codex's grouping logic feels off for multi-entity accounts — can you take a second look?</div>
+          <div class="bubble bubble-claude">Reviewed it. Recommend keying by <code>parent_customer_id</code> when a parent exists, not <code>customer_id</code> — handles the multi-entity case without a schema change.</div>
+        </div>
       </div>
     </div>
   </div>
