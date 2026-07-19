@@ -21,8 +21,12 @@ h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.01em;}
   padding:14px 24px;border-bottom:1px solid var(--border);
   background:var(--card-2);position:sticky;top:0;z-index:5;flex-wrap:wrap;
 }
-.topbar-left{display:flex;align-items:center;gap:14px;}
-.brand{color:var(--ink);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;}
+.topbar-left{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.crumbs{display:flex;align-items:center;gap:8px;font-family:'Space Grotesk',sans-serif;font-size:0.92rem;}
+.crumb{color:var(--ink-dim);text-decoration:none;font-weight:600;transition:color .2s;}
+.crumb:hover{color:var(--teal);}
+.crumb.current{color:var(--ink);}
+.crumb-sep{color:var(--border);}
 .live-dot{
   font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--ink-dim);
   display:flex;align-items:center;gap:6px;
