@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The PM-as-Builder Stack — Sambit</title>
+<meta name="description" content="A seven-tool AI-native workflow that lets one PM design, build, deploy, and validate real working product — not mockups.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="glow glow-1"></div>
+<div class="glow glow-2"></div>
+
+<nav class="nav">
+  <a href="https://www.sambitxsamba.com" class="nav-back">← sambitxsamba.com</a>
+  <span class="nav-tag">CASE STUDY 01</span>
+</nav>
+
+<header class="hero">
+  <p class="eyebrow">AI-NATIVE PRODUCT DEVELOPMENT</p>
+  <h1>One PM.<br><span class="grad">Seven tools.</span><br>A real working product.</h1>
+  <p class="hero-sub">
+    Not a Figma file. Not a slide deck. A live app with a real database, a real deploy pipeline,
+    and a real Git history — built by a PM who refused to wait for the handoff.
+  </p>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num" data-count="18300">0</span><span class="stat-label">lines of code</span></div>
+    <div class="stat"><span class="stat-num" data-count="65">0</span><span class="stat-label">commits</span></div>
+    <div class="stat"><span class="stat-num" data-count="18">0</span><span class="stat-label">elapsed days</span></div>
+    <div class="stat"><span class="stat-num" data-count="10">0</span><span class="stat-label">active build hours</span></div>
+  </div>
+  <div class="scroll-cue">scroll<span>↓</span></div>
+</header>
+
+<section class="section problem">
+  <p class="kicker">THE PROBLEM</p>
+  <h2>Static mockups lie by omission.</h2>
+  <div class="problem-grid">
+    <p class="lede">
+      A Figma file can show you a worklist. It can't show you what happens when 400 overdue invoices
+      hit a real segmentation rule, or whether your schema survives contact with an actual customer
+      timeline. Every PM knows the gap between "looks right" and "works" — and every PM has felt
+      how expensive that gap is to close through a traditional handoff.
+    </p>
+    <p class="lede">
+      So instead of writing a spec and waiting, this workflow treats product hypotheses as things
+      you test directly in software — mocked, coded, deployed, and reviewed in the same week
+      the idea showed up.
+    </p>
+  </div>
+</section>
+
+<section class="section stack">
+  <p class="kicker">THE STACK</p>
+  <h2>Seven tools. One job each. Zero manual glue.</h2>
+  <p class="stack-intro">
+    The power isn't any single tool — it's that they hand off to each other with almost no
+    manual intervention. Guidance flows into code, code flows into commits, commits flow into
+    deployments, and the PM stays the control system instead of the bottleneck.
+  </p>
+
+  <div class="pipeline">
+    <svg class="pipeline-line" viewBox="0 0 100 900" preserveAspectRatio="none">
+      <path d="M50,0 L50,900" />
+    </svg>
+
+    <div class="node" data-n="01">
+      <div class="node-head"><span class="node-tool">Lovable</span><span class="node-role">Visual ideation</span></div>
+      <p>Rapidly sketch and pressure-test UI concepts — the worklist, the grid, the detail views — before a single line of production code exists.</p>
+    </div>
+    <div class="node" data-n="02">
+      <div class="node-head"><span class="node-tool">ChatGPT</span><span class="node-role">Product reasoning</span></div>
+      <p>Turns raw ideas into structured PRDs, feature docs, and timestamped implementation instructions an agent can execute against.</p>
+    </div>
+    <div class="node" data-n="03">
+      <div class="node-head"><span class="node-tool">Codex</span><span class="node-role">Build execution</span></div>
+      <p>Implements scoped slices against the real codebase — GitHub-connected, plan/execute, incremental. The main coding engine.</p>
+    </div>
+    <div class="node" data-n="04">
+      <div class="node-head"><span class="node-tool">GitHub</span><span class="node-role">Source of truth</span></div>
+      <p>Two repos, cleanly separated: the app codebase and the guidance/docs layer. Every instruction and every diff, versioned and auditable.</p>
+    </div>
+    <div class="node" data-n="05">
+      <div class="node-head"><span class="node-tool">Supabase</span><span class="node-role">Real backend</span></div>
+      <p>Structured entities and schema instead of mock JSON — because grouping, tags, Promise-to-Pay, and disputes only get validated against real data.</p>
+    </div>
+    <div class="node" data-n="06">
+      <div class="node-head"><span class="node-tool">Vercel</span><span class="node-role">Live deployment</span></div>
+      <p>Every increment ships to a reviewable URL. The distance between "I have an idea" and "here, look at it" collapses to hours.</p>
+    </div>
+    <div class="node" data-n="07">
+      <div class="node-head"><span class="node-tool">Claude</span><span class="node-role">Second opinion</span></div>
+      <p>A challenger agent for when a parallel solution, an alternate framing, or an unblock is worth more than a single point of view.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section why">
+  <p class="kicker">WHY IT MATTERS</p>
+  <h2>The PM role doesn't shrink. It compounds.</h2>
+  <p class="lede centered">
+    This isn't "AI replaces engineering." It's a PM who defines intent, structures the plan,
+    steers the agents, validates every diff, and iterates in hours instead of sprints —
+    with a real product to show for it, not a deck.
+  </p>
+  <div class="why-cards">
+    <div class="why-card">
+      <h3>Inspectable, not imagined</h3>
+      <p>Live routes, real data models, version control, and deployments — trade-offs surface immediately instead of at the handoff.</p>
+    </div>
+    <div class="why-card">
+      <h3>Fast where it should be</h3>
+      <p>Lovable stays the visual discovery layer. Nothing forces one tool to carry ideation, backend modeling, and deployment control all at once.</p>
+    </div>
+    <div class="why-card">
+      <h3>Controlled where it must be</h3>
+      <p>The connected tooling reduces coordination busywork — it never replaces sequencing, scope, or acceptance criteria. That's still the PM's job.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section proof">
+  <p class="kicker">EVIDENCE, NOT A PITCH</p>
+  <h2>Applied to a real rebuild: a B2B AR collections worklist.</h2>
+  <p class="lede">
+    In under three weeks, this workflow took a collections operating surface from a blank
+    canvas to a working shell with dashboard and grid views, customer and invoice detail
+    surfaces, a live schema, and a live deploy — reviewable end to end, not staged for a demo.
+  </p>
+</section>
+
+<footer class="footer">
+  <p>A workflow, applied. Part of a running series of product case studies.</p>
+  <a href="https://www.sambitxsamba.com" class="footer-link">← Back to sambitxsamba.com</a>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
