@@ -161,7 +161,7 @@ h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.02em;}
 .node p{color:var(--ink-dim);max-width:600px;}
 
 .node.has-img{
-  display:flex;align-items:center;gap:40px;flex-wrap:wrap;
+  display:flex;align-items:flex-start;gap:40px;flex-wrap:wrap;
 }
 .node.has-img .node-text{flex:1 1 320px;}
 .node-shot{
