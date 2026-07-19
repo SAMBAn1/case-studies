@@ -6,7 +6,7 @@ Each case study lives in its own folder under `docs/` and is a self-contained st
 
 | Case study | Path |
 |---|---|
-| The PM-as-builder AI-native workflow | [`docs/collections-workflow`](docs/collections-workflow) |
+| The PM-as-builder AI-native workflow | [`docs/ai-native-pm-workflow`](docs/ai-native-pm-workflow) |
 | Data-driven vs. rule-based collections worklist | `docs/worklist-vision` (coming soon) |
 | B2B commerce portal — GTM to first 100 customers | `docs/i95dev-gtm` (coming soon) |
 | Overclocking experimentation log | `docs/overclock` (coming soon) |
