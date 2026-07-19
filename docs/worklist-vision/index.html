@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Worklist Operating Model — Sambit</title>
 <meta name="description" content="Two collections worklists, two different failures — and a hybrid operating model that keeps the control of one and the intelligence of the other. With a working demo.">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -18,6 +18,12 @@
 
 <nav class="nav">
   <a href="https://www.sambitxsamba.com" class="nav-back">← sambitxsamba.com</a>
+  <div class="nav-links">
+    <a href="#problem">Problem</a>
+    <a href="#vision">Vision</a>
+    <a href="#demo">Demo</a>
+    <a href="#migration">Migration</a>
+  </div>
   <span class="nav-tag">CASE STUDY 02</span>
 </nav>
 
@@ -31,13 +37,36 @@
   <div class="scroll-cue">scroll<span>↓</span></div>
 </header>
 
-<section class="section problem">
+<section class="section problem" id="problem">
   <p class="kicker">THE PROBLEM</p>
-  <h2>Control and intelligence keep getting shipped as opposites.</h2>
-  <p class="lede">
-    This isn't a versioning issue. It's a structural tradeoff neither model resolves on its own —
-    and collections teams end up choosing which failure they'd rather live with.
-  </p>
+  <h2>Who gets called first is the only question that matters.</h2>
+  <div class="story">
+    <p>
+      Every collections team opens one screen each morning and asks the same question: who do I
+      work first? Get that answer right and cash comes in faster, disputes get caught while
+      they're still small, and nobody wastes a call on an account that already paid. Get it wrong
+      — and it goes wrong constantly — and collectors either drown in a list they've stopped
+      trusting, or lose the specific judgment calls their business was actually built on.
+    </p>
+    <p>
+      Two different products tried to answer that question, and each one solved exactly half of it.
+    </p>
+    <p>
+      One handed collectors total control: segments, rules, named ownership, and actions specific
+      enough to mirror precisely how the business runs — "send this letter when an invoice is 15
+      days past due" could be modeled exactly as written. It worked, until the rulebook grew so
+      large that changing anything became a consulting engagement nobody wanted to open.
+    </p>
+    <p>
+      The other handed the decision to a model: data-driven scoring, a cleaner setup, live in days
+      instead of months. But nobody could explain why a customer ranked where it did, actions
+      collapsed into a generic "Call," and ownership could shift under a collector without warning.
+    </p>
+    <p class="story-turn">
+      Neither team was wrong. Both shipped half an answer. Below is exactly where each one broke —
+      and what the other half looks like.
+    </p>
+  </div>
 
   <div class="compare">
     <div class="compare-card rule">
@@ -72,7 +101,7 @@
   </div>
 </section>
 
-<section class="section vision">
+<section class="section vision" id="vision">
   <p class="kicker">THE VISION</p>
   <h2>Four questions. Four pillars. Independently answered, never entangled.</h2>
   <p class="lede">
@@ -104,7 +133,7 @@
   </div>
 </section>
 
-<section class="section demo">
+<section class="section demo" id="demo">
   <p class="kicker">SEE IT WORKING</p>
   <h2>This isn't a mock. It's running.</h2>
   <p class="lede">
@@ -153,7 +182,7 @@
   </div>
 </section>
 
-<section class="section migration">
+<section class="section migration" id="migration">
   <p class="kicker">THE ADOPTION UNLOCK</p>
   <h2>Nobody rebuilds their operating logic from a blank canvas.</h2>
   <p class="lede centered">
